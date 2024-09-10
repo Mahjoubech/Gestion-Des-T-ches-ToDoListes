@@ -45,6 +45,7 @@ void AjouterTache(tache tch[]) {
     do {
         printf("\t\tsaisir le deadline (jour/mois/annee) :");
         scanf("%d/%d/%d", &tch[dm].dline.jour, &tch[dm].dline.mois, &tch[dm].dline.year);
+        printf("\n");
     } while (tch[dm].dline.jour <= 0 || tch[dm].dline.jour >= 32 || tch[dm].dline.mois <= 0 || tch[dm].dline.mois >= 13 || tch[dm].dline.year <= 0);
     dm++;
     Id++;
@@ -54,6 +55,7 @@ void AjouterPlusTache(tache tch[]) {
     int nbr, plus;
     printf("\t\tcombien vous voulez ajouter :");
     scanf("%d", &nbr);
+    printf("\n");
     plus = nbr + dm;
     for (int i = dm; i < plus; i++) {
         AjouterTache(tch);
@@ -69,6 +71,7 @@ void AfficherTache(tache tch[]){
         printf("\t\t DeadLine : %d - %d - %d\n\n",tch[i].dline.jour,tch[i].dline.mois,tch[i].dline.year);
         
     }
+    printf("*******************************************************\n\n");
 }
 
 void triAlphab() {
@@ -87,18 +90,21 @@ for (int i = 0; i < dm - 1; i++) {
     }
     printf("******* Les taches triees alphabitique ********* \n\n");
     AfficherTache(h);
+    printf("*******************************************************\n\n");
 }
 int main() {
     int choix;
     do {
-        printf("\nMenu principal :\n");
-        printf("1. Ajouter une tâche\n");
-        printf("2. Ajouter plusieurs tâches\n");
-        printf("3. Afficher les tâches\n");
-        printf("4. Trier les tâches par ordre alphabétique\n");
-        printf("0. Quitter\n");
+        printf("\n\n******* Menu principal *******\n");
+        printf("\t1. Ajouter une tache\n");
+        printf("\t2. Ajouter plusieurs taches\n");
+        printf("\t3. Afficher les taches\n");
+        printf("\t4. Trier les taches par ordre alphabetique\n");
+        printf("\t0. Quitter\n");
+        printf("*******************************************************\n\n");
         printf("Choisissez une option : ");
         scanf("%d", &choix);
+        printf("\n");
 
         switch (choix) {
             case 1:
